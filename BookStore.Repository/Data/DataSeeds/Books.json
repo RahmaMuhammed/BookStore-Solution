@@ -1,0 +1,138 @@
+[
+  {
+    "Title": "Moby Dick (1)",
+    "AuthorId": 5,
+    "Price": 52,
+    "Stock": 77,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/8300191-L.jpg",
+    "Description": "An epic tale of obsession and revenge, Moby Dick follows Captain Ahab’s relentless pursuit of the great white whale."
+  },
+  {
+    "Title": "The Great Gatsby (2)",
+    "AuthorId": 4,
+    "Price": 59,
+    "Stock": 60,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/8218233-L.jpg",
+    "Description": "F. Scott Fitzgerald's masterpiece, exploring themes of wealth, love, and the American Dream in 1920s America."
+  },
+  {
+    "Title": "To Kill a Mockingbird (3)",
+    "AuthorId": 1,
+    "Price": 66,
+    "Stock": 92,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/8221825-L.jpg",
+    "Description": "A gripping novel set in the American South, exploring racial injustice through the eyes of young Scout Finch."
+  },
+  {
+    "Title": "1984 (4)",
+    "AuthorId": 2,
+    "Price": 55,
+    "Stock": 37,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/7222081-L.jpg",
+    "Description": "George Orwell’s dystopian classic, depicting a totalitarian regime that uses surveillance and mind control to maintain power."
+  },
+  {
+    "Title": "Pride and Prejudice (5)",
+    "AuthorId": 3,
+    "Price": 75,
+    "Stock": 80,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/8154283-L.jpg",
+    "Description": "Jane Austen's timeless romantic comedy about the manners and matrimony in early 19th-century England."
+  },
+  {
+    "Title": "War and Peace (6)",
+    "AuthorId": 6,
+    "Price": 61,
+    "Stock": 51,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/8097592-L.jpg",
+    "Description": "Leo Tolstoy’s historical novel set during the Napoleonic Wars, blending individual stories with sweeping political and social events."
+  },
+  {
+    "Title": "Brave New World (7)",
+    "AuthorId": 9,
+    "Price": 77,
+    "Stock": 31,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/8230944-L.jpg",
+    "Description": "Aldous Huxley’s dystopian novel, imagining a future world of genetically engineered citizens and an all-powerful state."
+  },
+  {
+    "Title": "Moby Dick (8)",
+    "AuthorId": 5,
+    "Price": 66,
+    "Stock": 98,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/8300191-L.jpg",
+    "Description": "Another edition of Herman Melville’s great American novel about the obsessive hunt for a mighty whale."
+  },
+  {
+    "Title": "Brave New World (9)",
+    "AuthorId": 9,
+    "Price": 72,
+    "Stock": 22,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/8230944-L.jpg",
+    "Description": "A vision of a futuristic society where technological advancements control the human experience."
+  },
+  {
+    "Title": "Brave New World (10)",
+    "AuthorId": 9,
+    "Price": 56,
+    "Stock": 5,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/8230944-L.jpg",
+    "Description": "A new edition of Huxley’s classic, exploring how society controls its citizens through technology and pleasure."
+  },
+  {
+    "Title": "To Kill a Mockingbird (11)",
+    "AuthorId": 1,
+    "Price": 58,
+    "Stock": 36,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/8221825-L.jpg",
+    "Description": "Another edition of Harper Lee’s beloved novel about race, justice, and morality in the Deep South."
+  },
+  {
+    "Title": "War and Peace (12)",
+    "AuthorId": 6,
+    "Price": 50,
+    "Stock": 30,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/8097592-L.jpg",
+    "Description": "A new edition of Tolstoy’s monumental epic of love and loss during the Napoleonic Wars."
+  },
+  {
+    "Title": "The Odyssey (13)",
+    "AuthorId": 10,
+    "Price": 96,
+    "Stock": 45,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/7233482-L.jpg",
+    "Description": "Homer’s ancient Greek epic, chronicling the adventures of Odysseus as he struggles to return home after the Trojan War."
+  },
+  {
+    "Title": "The Catcher in the Rye (14)",
+    "AuthorId": 7,
+    "Price": 72,
+    "Stock": 58,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/7945287-L.jpg",
+    "Description": "J.D. Salinger’s classic coming-of-age story about teenage alienation and the search for identity."
+  },
+  {
+    "Title": "The Hobbit (15)",
+    "AuthorId": 8,
+    "Price": 56,
+    "Stock": 67,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/7578667-L.jpg",
+    "Description": "J.R.R. Tolkien’s beloved fantasy novel about Bilbo Baggins’ quest to win treasure and avoid danger."
+  },
+  {
+    "Title": "Jane Eyre (16)",
+    "AuthorId": 3,
+    "Price": 68,
+    "Stock": 73,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/8135317-L.jpg",
+    "Description": "Charlotte Brontë’s novel about the life and struggles of a young orphan, Jane Eyre, as she grows into adulthood."
+  },
+  {
+    "Title": "Frankenstein (17)",
+    "AuthorId": 3,
+    "Price": 79,
+    "Stock": 42,
+    "pictureUrl": "https://covers.openlibrary.org/b/id/8325587-L.jpg",
+    "Description": "Mary Shelley’s gothic horror novel about the creation of a monster and the moral questions surrounding scientific progress."
+  }
+]
