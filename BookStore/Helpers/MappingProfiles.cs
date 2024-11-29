@@ -19,6 +19,11 @@ namespace BookStore.Helpers
                .ForMember(dto => dto.Formats, opt => opt.MapFrom(b => b.Formats)) // Map Formats collection
                .ForMember(dto => dto.genres, opt => opt.MapFrom(b => b.genres)) // Map genres collection
                .ForMember(dto => dto.pictureUrl, opt => opt.MapFrom<BookPictureUrlResolve>());
+
+            CreateMap<BookToCreateDTO, Book>()
+               .ForMember(b => b.Formats, opt => opt.Ignore()) 
+               .ForMember(b => b.genres, opt => opt.Ignore()); 
+
         }
     }
 }

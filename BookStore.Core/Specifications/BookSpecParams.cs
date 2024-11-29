@@ -11,6 +11,7 @@ namespace BookStore.Core.Specifications
         public string? sort { get; set; }
         public int? GenreId { get; set; }
         public int? FormatId { get; set; }
+        public int? AuthorId { get; set; }
         private int pageSize = 5;
         public int PageSize
         {

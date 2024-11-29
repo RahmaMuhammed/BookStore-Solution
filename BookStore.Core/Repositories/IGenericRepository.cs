@@ -14,6 +14,9 @@ namespace BookStore.Core.Repositories
         public Task<T> GetByIdAsync(ISpecifications<T> spec);
         public Task<T> GetByNameAsync(ISpecifications<T> spec);
         public Task<int> GetCountWithSpecAsync(ISpecifications<T> spec);
+        public Task<T> Add(T entity); 
+        public Task<T> Update(T entity);
+        public Task<T> Delete(T entity);
     }
 }
 
