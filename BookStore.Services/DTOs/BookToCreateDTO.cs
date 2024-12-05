@@ -1,4 +1,4 @@
-﻿namespace BookStore.DTOs
+﻿namespace BookStore.Services.DTOs
 {
     public class BookToCreateDTO
     {

@@ -1,7 +1,7 @@
 ﻿
 namespace BookStore.Errors
 {
-    public class ApiResponse
+    public class ApiResponse : Exception
     {
         public int StatusCode { get; set; }
         public string? ErrorMessage { get; set; }

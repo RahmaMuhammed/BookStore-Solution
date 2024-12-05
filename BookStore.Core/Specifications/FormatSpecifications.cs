@@ -10,6 +10,6 @@ namespace BookStore.Core.Specifications
 {
     public class FormatSpecifications : BaseSpecifications<BookFormat>
     {
-       public FormatSpecifications(string name) : base(N => N.Name == name) { }
+       public FormatSpecifications(int id) : base(N => N.Id == id) { }
     }
 }

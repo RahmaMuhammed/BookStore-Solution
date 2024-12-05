@@ -21,6 +21,8 @@ namespace BookStore.Controllers
             _formats = formats;
             _mapper = mapper;
         }
+
+        // Get All Formats
         [HttpGet]
         [ProducesResponseType(typeof(BookFormatDto), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse),StatusCodes.Status404NotFound)]
@@ -31,16 +33,23 @@ namespace BookStore.Controllers
             var MapFormat = _mapper.Map<IReadOnlyList<BookFormat>, IReadOnlyList<BookFormatDto>>(format);
             return Ok(MapFormat);
         }
-        [HttpGet("{Name}")]
+
+        // Get All Books Related To Specific Format
+        [HttpGet("{id}")]
         [ProducesResponseType(typeof(FormatDto), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<FormatDto>> GetByNameAsync()
+        public async Task<ActionResult<FormatDto>> GetByNameAsync(int id)
         {
-            var spec = new BaseSpecifications<BookFormat>();
-            var format = await _formats.GetByNameAsync(spec);
+            var spec = new FormatSpecifications(id);
+            var format = await _formats.GetByIdAsync(spec);
             if (format == null) return NotFound(new ApiResponse(404));
             var MapFormat = _mapper.Map<BookFormat,FormatDto>(format);
             return Ok(MapFormat);
         }
+
+        // Add Format 
+
+
+
     }
 }

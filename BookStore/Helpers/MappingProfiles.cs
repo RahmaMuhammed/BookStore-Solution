@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BookStore.Core.Entities;
 using BookStore.DTOs;
+using BookStore.Services.DTOs;
 
 namespace BookStore.Helpers
 {

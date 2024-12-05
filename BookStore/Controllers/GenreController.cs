@@ -31,13 +31,13 @@ namespace BookStore.Controllers
             return Ok(MapGener);
         }
 
-        [HttpGet("{Name}")]
+        [HttpGet("{id}")]
         [ProducesResponseType(typeof(GenreDto), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<GenreDto>> GetGenreByName(string Name)
+        public async Task<ActionResult<GenreDto>> GetGenreByName(int id)
         {
-            var spec = new GenreSpecifications(Name);
-            var genre = await _gener.GetByNameAsync(spec);
+            var spec = new GenreSpecifications(id);
+            var genre = await _gener.GetByIdAsync(spec);
             if (genre == null) return NotFound(new ApiResponse(404));
             var MapGener = _mapper.Map<BookGenre, GenreDto>(genre);
             return Ok(MapGener);

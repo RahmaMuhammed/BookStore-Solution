@@ -6,6 +6,8 @@ using BookStore.DTOs;
 using BookStore.Errors;
 using BookStore.Helpers;
 using BookStore.Repository.Data;
+using BookStore.Services.DTOs;
+using BookStore.Services.Implementations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -19,12 +21,14 @@ namespace BookStore.Controllers
         private readonly IGenericRepository<Book> _bookRepo;
         private readonly IMapper _mapper;
         private readonly StoreContext _context;
+        private readonly BookService _bookService;
 
-        public BookController(IGenericRepository<Book> bookRepo, IMapper mapper, StoreContext context)
+        public BookController(IGenericRepository<Book> bookRepo, IMapper mapper, StoreContext context, BookService bookService)
         {
             _bookRepo = bookRepo;
             _mapper = mapper;
             _context = context;
+            _bookService = bookService;
         }
         // Get All Books
         [HttpGet]
@@ -59,52 +63,22 @@ namespace BookStore.Controllers
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<BookToReturnDto>> AddNewBook([FromBody] BookToCreateDTO bookDto)
         {
-            var newBook = _mapper.Map<BookToCreateDTO, Book>(bookDto);
-
-            // Fetch genres based on GenreIds from the database
-            var genres = await _context.BookGenres
-                                       .Where(g => bookDto.genresIDs.Contains(g.Id))
-                                       .ToListAsync();
-
-            var formats = await _context.BookFormats
-                                       .Where(g => bookDto.FormatsIDs.Contains(g.Id))
-                                       .ToListAsync();
-
-            var Author = await _context.BookAuthors
-                                       .Where(A => A.Id == bookDto.AuthorId)
-                                       .FirstOrDefaultAsync();
-
-            if (Author == null)
+            try
             {
-                return BadRequest(new ApiResponse(400, "Invalid Author ID provided."));
+                var addedBook = _bookService.CreateBookAsync(bookDto);
+                return CreatedAtAction(nameof(GetBookById), new { id = addedBook.Id }, addedBook);
             }
-
-            if (!genres.Any() && genres.Count != bookDto.genresIDs.Count)
+            catch (ApiResponse ex)
             {
-                return BadRequest(new ApiResponse(400, "Invalid Genre IDs provided."));
+                // Catch the ApiResponse exception and return the appropriate BadRequest with message
+                return BadRequest(new ApiResponse(ex.StatusCode, ex.Message));
             }
-
-            if (!formats.Any() && formats.Count != bookDto.FormatsIDs.Count)
+            catch (Exception ex)
             {
-                return BadRequest(new ApiResponse(400, "Invalid Format IDs provided."));
+               
+                return StatusCode(500, new ApiResponse(500, "An unexpected error occurred."));
             }
-            // Associate genres with the book
-            newBook.genres = genres;
-            newBook.Formats = formats;
-
-            // Save the book
-            var addedBook = await _bookRepo.Add(newBook);
-
-            if (addedBook == null)
-            {
-                return BadRequest(new ApiResponse(400));
-            }
-
-            var bookToReturn = _mapper.Map<Book, BookToReturnDto>(addedBook);
-
-            return CreatedAtAction(nameof(GetBookById), new { id = addedBook.Id }, bookToReturn);
         }
-
         // Update book
         [HttpPut("{id}")]
         [ProducesResponseType(typeof(BookToReturnDto), StatusCodes.Status200OK)]

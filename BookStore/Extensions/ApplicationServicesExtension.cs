@@ -2,6 +2,8 @@
 using BookStore.Errors;
 using BookStore.Helpers;
 using BookStore.Repository;
+using BookStore.Services.Implementations;
+using BookStore.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStore.Extentions
@@ -12,6 +14,7 @@ namespace BookStore.Extentions
         {
             Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             Services.AddAutoMapper(typeof(MappingProfiles));
+            Services.AddScoped<IBookServices, BookService>();
             Services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.InvalidModelStateResponseFactory = actionContext =>

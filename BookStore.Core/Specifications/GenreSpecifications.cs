@@ -9,7 +9,7 @@ namespace BookStore.Core.Specifications
 {
     public class GenreSpecifications : BaseSpecifications<BookGenre>
     {
-        public GenreSpecifications(string name) : base(N => N.Name == name) 
+        public GenreSpecifications(int id) : base(N => N.Id == id) 
         {
             
         }
